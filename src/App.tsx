@@ -1,26 +1,50 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Counter from './counter/Counter';
-import DogImage from './dog_image/DogImage';
-import './App.css'
+import Counter from './components/counter/Counter';
+import DogImage from './components/dogImage/DogImage';
+import './App.css';
+import type { RouteType } from './interface/route.interface';
+import { RoutePaths } from './enum/route.enum';
+import RendereCount from './components/renderCount/renderCount';
 
 function App() {
+  const routes: RouteType[] = [
+    { path: RoutePaths.DOG, component: DogImage },
+    { path: RoutePaths.COUNTER, component: Counter },
+    { path: RoutePaths.RENDER_COUNT, component: RendereCount },
+  ];
+
   return (
-    <>
-      <div className="App">
+    <div className="App">
       <Router>
-        <ul>
-          {['dog', 'counter'].map((e, index) => (<li key={index}>
-            <Link to={`/${e}`}>{e}</Link>
-          </li>))}
-        </ul>
-        <Routes>
-          <Route path="/dog" element={<DogImage />} />
-          <Route path="/counter" element={<Counter />} />
-        </Routes>
+        <div className="layout">
+          <nav className="sidebar">
+            <ul>
+              {routes.map((e, index) => (
+                <li key={index}>
+                  <Link to={`/day${index+1}-${e.path}`}>
+                    {`Day ${index + 1}: ${e.path}`}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <main className="content">
+            <Routes>
+              {routes.map((e, index) => {
+                return (
+                  <Route
+                    key={index}
+                    path={`/day${index+1}-${e.path}`}
+                    element={<e.component />}
+                  />
+                );
+              })}
+            </Routes>
+          </main>
+        </div>
       </Router>
     </div>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;

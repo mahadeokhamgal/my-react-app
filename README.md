@@ -72,11 +72,11 @@ export default tseslint.config([
 # implememtations.
 # ReactJS Interview-style Problem Statements
 
-1. Create a React app to render a random dog image and change on every click. While the image is being loaded, show a loading icon.
+`Day-1`. Create a React app to render a random dog image and change on every click. While the image is being loaded, show a loading icon.
 
-2. Create a React app for a counter. On click of a button, it should start a countdown from a user input number of seconds and on completion it should show "completed." If the user clicks reset in between, the timer will restart. The user should be able to see the timer clock on the UI.
+`Day-2`. Create a React app for a counter. On click of a button, it should start a countdown from a user input number of seconds and on completion it should show "completed." If the user clicks reset in between, the timer will restart. The user should be able to see the timer clock on the UI.
 
-3. Create a custom hook in ReactJS that calls the function passed to it as a parameter on the third render of the component.
+`Day-3`. Create a custom hook in ReactJS that calls the function passed to it as a parameter on the third render of the component.
 
 4. Create a React app that fetches and displays a list of dog breeds from a public API. When a breed is clicked, show a random image of that breed below the list.
 

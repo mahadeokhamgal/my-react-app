@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
-import useOnThirdRender from '../useOnThirdRender';
+
 import axios from 'axios';
 
 function DogImage() {
     const [imageUrl, setImageUrl] = useState('');
-    const componentName = "DogImage";
     useEffect(() => {
         changeImageUrl();
         return () => {
             console.log("Clean off");
         }
     }, []);
-
-    useOnThirdRender((t: number) => {
-        console.log(`component ${componentName} rendered ${t} times`);
-    })
 
     function changeImageUrl() {
         axios.get('https://dog.ceo/api/breeds/image/random')
@@ -27,7 +22,7 @@ function DogImage() {
 
     return (<>
         <button onClick={changeImageUrl}>
-            <p >
+            <p>
                 Click to fetch a random image.
             </p>
         </button>

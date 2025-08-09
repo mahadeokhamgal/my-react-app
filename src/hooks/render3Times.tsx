@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react";
 
-function useOnThirdRender(callBack: (renderCount: number) => void): void {
+function Render3Times(callback: () => void): void {
     const renderedCount = useRef(0);
     
     useEffect(() => {
         renderedCount.current += 1;
-        callBack(renderedCount.current);
+        if(renderedCount.current == 3) {
+            callback();
+        }
     });
 }
 
-export default useOnThirdRender;
+export default Render3Times;
