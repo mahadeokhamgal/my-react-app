@@ -1,33 +1,49 @@
 import { useEffect, useState } from "react";
-
-import axios from 'axios';
+import axios from "axios";
 
 function DogImage() {
     const [imageUrl, setImageUrl] = useState('');
+    const [imageLoading, setImageLoading] = useState(false);
+
     useEffect(() => {
-        changeImageUrl();
+        fetchImage();
+
         return () => {
-            console.log("Clean off");
-        }
+            console.log("Component Dog unmounted");
+        };
     }, []);
 
-    function changeImageUrl() {
-        axios.get('https://dog.ceo/api/breeds/image/random')
-            .then((res) => {
-                setImageUrl(res.data.message);
-            }, (err) => {
-                console.log(err);
-            })
+    async function fetchImage() {
+        try {
+            setImageLoading(true);
+            const res = await axios.get('https://dog.ceo/api/breeds/image/random');
+            setImageUrl(res.data.message);
+        } catch (error) {
+            console.error("Failed to fetch dog image:", error);
+        } finally {
+            setImageLoading(false);
+        }
     }
 
-    return (<>
-        <button onClick={changeImageUrl}>
-            <p>
-                Click to fetch a random image.
-            </p>
-        </button>
-        <img src={imageUrl} alt='Error loading image'></img>
-    </>);
+    return (
+        <div>
+            <button onClick={fetchImage} disabled={imageLoading}>
+                {imageLoading ? "Loading..." : "Click to fetch a random image"}
+            </button>
+
+            {imageUrl ? (
+                <div style={{ marginTop: '1rem' }}>
+                    <img
+                        src={imageUrl}
+                        alt="A cute dog"
+                        style={{ maxWidth: '70vw', borderRadius: '8px' }}
+                    />
+                </div>
+            ) : (
+                <p style={{ marginTop: '1rem' }}>No image loaded yet.</p>
+            )}
+        </div>
+    );
 }
 
 export default DogImage;

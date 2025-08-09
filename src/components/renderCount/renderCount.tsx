@@ -1,32 +1,23 @@
-import { useEffect, useState } from "react";
-import getRenderCount from '../../hooks/render3Times';
+import { useState } from "react";
+import useRenderThreeTimes from '../../hooks/render3Times';
 
-function RendereCount() {
-    const [renderdTrice, setRenderedTrice] = useState(false);
-    const [clickCount, setClickCount] = useState(0);
+function RenderCount() {
+  const [clickCount, setClickCount] = useState(0);
+  const renderedThrice = useRenderThreeTimes();
 
-    useEffect(() => {
-        console.log("initiated");
-    }, []);
+  function updateClickCount(): void {
+    setClickCount(prev => prev + 1);
+  }
 
-    getRenderCount(() => {
-        setRenderedTrice(true)
-    });
-
-    function updateDlickCount(): void {
-        console.log("change");
-        setClickCount(prev => prev+1);
-    }
-
-    return (
-        <>
-            <p>Clicked count - {clickCount}</p>
-            <p>
-                Rendered atleast Trice ? - {renderdTrice ? "Yes" : "No"}
-            </p>
-            <button onClick={updateDlickCount}>Rerender the component</button>
-        </>
-    );
+  return (
+    <>
+      <p>Clicked count - {clickCount}</p>
+      <p>
+        Rendered at least thrice? - {renderedThrice ? "Yes" : "No"}
+      </p>
+      <button onClick={updateClickCount}>Rerender the component</button>
+    </>
+  );
 }
 
-export default RendereCount;
+export default RenderCount;

@@ -78,7 +78,7 @@ export default tseslint.config([
 
 `Day-3`. Create a custom hook in ReactJS that calls the function passed to it as a parameter on the third render of the component.
 
-4. Create a React app that fetches and displays a list of dog breeds from a public API. When a breed is clicked, show a random image of that breed below the list.
+`Day-4`. Create a React app that fetches and displays a list of dog breeds from a public API. When a breed is clicked, show a random image of that breed below the list.
 
 5. Build a stopwatch React app with Start, Stop, and Reset buttons. The timer should update every second and display minutes and seconds.
 

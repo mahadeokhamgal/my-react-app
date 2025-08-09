@@ -1,14 +1,18 @@
-import { useEffect, useRef } from "react";
+// hooks/useRenderThreeTimes.ts
+import { useEffect, useRef, useState } from "react";
 
-function Render3Times(callback: () => void): void {
-    const renderedCount = useRef(0);
-    
-    useEffect(() => {
-        renderedCount.current += 1;
-        if(renderedCount.current == 3) {
-            callback();
-        }
-    });
+function useRenderThreeTimes(): boolean {
+  const renderCount = useRef(1);
+  const [hasRenderedThrice, setHasRenderedThrice] = useState(false);
+
+  useEffect(() => {
+    renderCount.current += 1;
+    if (renderCount.current >= 3) {
+      setHasRenderedThrice(true);
+    }
+  });
+
+  return hasRenderedThrice;
 }
 
-export default Render3Times;
+export default useRenderThreeTimes;
