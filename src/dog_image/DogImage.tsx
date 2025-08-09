@@ -12,7 +12,7 @@ function DogImage() {
         }
     }, []);
 
-    useOnThirdRender((t) => {
+    useOnThirdRender((t: number) => {
         console.log(`component ${componentName} rendered ${t} times`);
     })
 
