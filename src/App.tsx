@@ -8,6 +8,7 @@ import RendereCount from './components/renderCount/renderCount';
 import DogBreeds from './components/dogBreeds/DogBreeds';
 import Stopwatch from './components/stopwatch/Stopwatch';
 import FormatCurrency from './components/formatCurrency/formatCurrency';
+import UsePrevious from './components/usePrevious/usePrevious';
 
 function App() {
   const routes: RouteType[] = [
@@ -17,6 +18,7 @@ function App() {
     { path: RoutePaths.DOG_BREEDS, component: DogBreeds },
     { path: RoutePaths.STOPWATCH, component: Stopwatch },
     { path: RoutePaths.CURRENCY, component: FormatCurrency },
+    { path: RoutePaths.USE_PREVIOUS, component: UsePrevious },
   ];
 
   return (

@@ -84,9 +84,9 @@ export default tseslint.config([
 
 `Day-6`. Create a React component with an input field that accepts only numbers. On typing, it should format the input as currency (e.g., 1000 → 1,000).
 
-7. Build a custom hook `usePrevious` that stores and returns the previous value of a prop or state variable.
+`Day-7`. Build a custom hook `usePrevious` that stores and returns the previous value of a prop or state variable.
 
-8. Implement a React app with a todo list where users can add, remove, and toggle completion status of tasks. Persist todos in `localStorage`.
+`Day-8`. Implement a React app with a todo list where users can add, remove, and toggle completion status of tasks. Persist todos in `localStorage`.
 
 9. Create a modal dialog component in React that traps focus within itself when open and returns focus to the trigger button on close.
 

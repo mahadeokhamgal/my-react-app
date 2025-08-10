@@ -5,4 +5,5 @@ export const RoutePaths = {
   DOG_BREEDS: 'dogbreeds',
   STOPWATCH: 'stopwatch',
   CURRENCY: 'currency',
+  USE_PREVIOUS: 'usePrevious',
 } as const;
