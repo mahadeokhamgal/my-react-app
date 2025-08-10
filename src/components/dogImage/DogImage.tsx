@@ -27,6 +27,7 @@ function DogImage() {
 
     return (
         <div>
+            <h2>Random Dog Images</h2>
             <button onClick={fetchImage} disabled={imageLoading}>
                 {imageLoading ? "Loading..." : "Click to fetch a random image"}
             </button>

@@ -3,4 +3,6 @@ export const RoutePaths = {
   COUNTER: 'counter',
   RENDER_COUNT: 'rendercount',
   DOG_BREEDS: 'dogbreeds',
+  STOPWATCH: 'stopwatch',
+  CURRENCY: 'currency',
 } as const;

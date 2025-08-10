@@ -39,51 +39,54 @@ function DogBreeds() {
   }
 
   return (
-    <div style={styles.container}>
-      {breedsLoaded ? (
-        <>
-          <div style={styles.sidebar}>
-            <ul style={styles.breedList}>
-              {Object.entries(breeds).map(([parentBreed, childBreeds]) => (
-                <li key={parentBreed} style={styles.listItem} onClick={() => setBreed(parentBreed)}>
-                  {parentBreed}
-                  {childBreeds.length > 0 && (
-                    <ul>
-                      {childBreeds.map((childBreed) => (
-                        <li
-                          key={childBreed}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setBreed(parentBreed, childBreed);
-                          }}
-                          style={styles.subItem}
-                        >
-                          {childBreed}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+    <>
+      <h2>Dog Breeds</h2>
+      <div style={styles.container}>
+        {breedsLoaded ? (
+          <>
+            <div style={styles.sidebar}>
+              <ul style={styles.breedList}>
+                {Object.entries(breeds).map(([parentBreed, childBreeds]) => (
+                  <li key={parentBreed} style={styles.listItem} onClick={() => setBreed(parentBreed)}>
+                    {parentBreed}
+                    {childBreeds.length > 0 && (
+                      <ul>
+                        {childBreeds.map((childBreed) => (
+                          <li
+                            key={childBreed}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setBreed(parentBreed, childBreed);
+                            }}
+                            style={styles.subItem}
+                          >
+                            {childBreed}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div style={styles.imageArea}>
-            {imageUrl ? (
-              <img
-                src={imageUrl}
-                alt="A cute dog"
-                style={styles.image}
-              />
-            ) : (
-              <p>Click on a breed to see a dog image.</p>
-            )}
-          </div>
-        </>
-      ) : (
-        <p>Loading dog breeds...</p>
-      )}
-    </div>
+            <div style={styles.imageArea}>
+              {imageUrl ? (
+                <img
+                  src={imageUrl}
+                  alt="A cute dog"
+                  style={styles.image}
+                />
+              ) : (
+                <p>Click on a breed to see a dog image.</p>
+              )}
+            </div>
+          </>
+        ) : (
+          <p>Loading dog breeds...</p>
+        )}
+      </div>
+    </>
   );
 }
 

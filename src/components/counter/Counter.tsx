@@ -40,6 +40,7 @@ function Counter() {
 
   return (
     <>
+      <h2>Coundown counter</h2>
       <p>{time > 0 ? time : "Over!"}</p>
       <button onClick={resetTime}>Reset</button>
     </>

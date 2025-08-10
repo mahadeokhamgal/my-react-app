@@ -80,9 +80,9 @@ export default tseslint.config([
 
 `Day-4`. Create a React app that fetches and displays a list of dog breeds from a public API. When a breed is clicked, show a random image of that breed below the list.
 
-5. Build a stopwatch React app with Start, Stop, and Reset buttons. The timer should update every second and display minutes and seconds.
+`Day-5`. Build a stopwatch React app with Start, Stop, and Reset buttons. The timer should update every second and display minutes and seconds.
 
-6. Create a React component with an input field that accepts only numbers. On typing, it should format the input as currency (e.g., 1000 → 1,000).
+`Day-6`. Create a React component with an input field that accepts only numbers. On typing, it should format the input as currency (e.g., 1000 → 1,000).
 
 7. Build a custom hook `usePrevious` that stores and returns the previous value of a prop or state variable.
 

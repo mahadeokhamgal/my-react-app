@@ -10,7 +10,7 @@ function useRenderThreeTimes(): boolean {
     if (renderCount.current >= 3) {
       setHasRenderedThrice(true);
     }
-  });
+  }, []);
 
   return hasRenderedThrice;
 }

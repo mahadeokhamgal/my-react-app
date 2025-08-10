@@ -6,6 +6,8 @@ import type { RouteType } from './interface/route.interface';
 import { RoutePaths } from './enum/route.enum';
 import RendereCount from './components/renderCount/renderCount';
 import DogBreeds from './components/dogBreeds/DogBreeds';
+import Stopwatch from './components/stopwatch/Stopwatch';
+import FormatCurrency from './components/formatCurrency/formatCurrency';
 
 function App() {
   const routes: RouteType[] = [
@@ -13,6 +15,8 @@ function App() {
     { path: RoutePaths.COUNTER, component: Counter },
     { path: RoutePaths.RENDER_COUNT, component: RendereCount },
     { path: RoutePaths.DOG_BREEDS, component: DogBreeds },
+    { path: RoutePaths.STOPWATCH, component: Stopwatch },
+    { path: RoutePaths.CURRENCY, component: FormatCurrency },
   ];
 
   return (
