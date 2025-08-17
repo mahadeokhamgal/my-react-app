@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { ThemeContext } from "../../App";
 
 function Counter() {
   const [time, setTime] = useState(30);
   const timerRef = useRef<number | null>(null);
+  const toggleDarkTheme = useContext(ThemeContext);
 
   useEffect(() => {
     startTimer();
@@ -40,6 +42,7 @@ function Counter() {
 
   return (
     <>
+      <button onClick={toggleDarkTheme}>Toggle theme</button>
       <h2>Coundown counter</h2>
       <p>{time > 0 ? time : "Over!"}</p>
       <button onClick={resetTime}>Reset</button>
