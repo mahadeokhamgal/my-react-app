@@ -6,5 +6,6 @@ export const RoutePaths = {
   STOPWATCH: 'stopwatch',
   CURRENCY: 'currency',
   USE_PREVIOUS: 'usePrevious',
-  TODO_LIST: 'todoList'
+  TODO_LIST: 'todoList',
+  USERS: 'users',
 } as const;

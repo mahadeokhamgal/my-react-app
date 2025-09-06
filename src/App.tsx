@@ -12,6 +12,7 @@ import UsePrevious from './components/usePrevious/usePrevious';
 import TodoList from './components/todoList/todoList';
 import { useState } from 'react';
 import React from 'react';
+import Users from './components/Users/Users';
 
 export const ThemeContext = React.createContext();
 
@@ -37,6 +38,7 @@ function App() {
     { path: RoutePaths.CURRENCY, component: FormatCurrency },
     { path: RoutePaths.USE_PREVIOUS, component: UsePrevious },
     { path: RoutePaths.TODO_LIST, component: TodoList },
+    { path: RoutePaths.USERS, component: Users}
   ];
 
   return (
